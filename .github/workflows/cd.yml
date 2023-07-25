@@ -75,4 +75,4 @@ jobs:
             docker stop ${{ secrets.DOCKER_REPOSITORY }}
             docker rm ${{ secrets.DOCKER_REPOSITORY }}
             docker-compose up -d
-            docker rmi ${{ secrets.DOCKER_REPOSITORY }}
+            docker rmi ${{ secrets.DOCKER_USERNAME }}/${{ secrets.DOCKER_REPOSITORY }}
