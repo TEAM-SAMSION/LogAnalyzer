@@ -27,7 +27,6 @@ jobs:
 
       - name: Set .env for configuration
         run: |
-          rm ./.env
           touch ./.env
           echo "MONGO_USERNAME=${{ secrets.MONGO_USERNAME }}" >> ./.env
           echo "MONGO_PASSWORD=${{ secrets.MONGO_PASSWORD }}" >> ./.env
