@@ -26,13 +26,18 @@ jobs:
         shell: bash
 
       - name: Set .env for configuration
-        run: |
-          touch ./.env
-          echo "MONGO_USERNAME=${{ secrets.MONGO_USERNAME }}" >> ./.env
-          echo "MONGO_PASSWORD=${{ secrets.MONGO_PASSWORD }}" >> ./.env
-          echo "DOCKER_USERNAME=${{ secrets.DOCKER_USERNAME }}" >> ./.env
-          echo "DOCKER_REPOSITORY=${{ secrets.DOCKER_REPOSITORY }}" >> ./.env
-        shell: bash
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.HOST }}
+          username: ubuntu
+          key: ${{ secrets.KEY }}
+          script: |
+            rm -rf ./.env
+            touch ./.env
+            echo "MONGO_USERNAME=${{ secrets.MONGO_USERNAME }}" >> ./.env
+            echo "MONGO_PASSWORD=${{ secrets.MONGO_PASSWORD }}" >> ./.env
+            echo "DOCKER_USERNAME=${{ secrets.DOCKER_USERNAME }}" >> ./.env
+            echo "DOCKER_REPOSITORY=${{ secrets.DOCKER_REPOSITORY }}" >> ./.env
 
       - name: Build With Gradle
         run: ./gradlew build
