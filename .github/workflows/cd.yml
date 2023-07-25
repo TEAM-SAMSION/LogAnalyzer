@@ -8,6 +8,11 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-22.04
+    env:
+      DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+      DOCKER_REPOSITORY: ${{ secrets.DOCKER_REPOSITORY }}
+      MONGO_USERNAME: ${{ secrets.MONGO_USERNAME }}
+      MONGO_PASSWORD: ${{ secrets.MONGO_PASSWORD }}
 
     steps:
       - uses: actions/checkout@v3
@@ -29,7 +34,7 @@ jobs:
         run: ./gradlew build
 
       - name: Docker build
-        run: docker build -f ./deploy/Dockerfile -t ${{ secrets.DOCKER_USERNAME }}/${{ secrets.DOCKER_REPOSITORY }}
+        run: docker build -f ./deploy/Dockerfile -t ${{ secrets.DOCKER_USERNAME }}/${{ secrets.DOCKER_REPOSITORY }} .
 
       - name: Docker Hub Login
         uses: docker/login-action@v1
