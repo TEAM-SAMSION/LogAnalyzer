@@ -8,11 +8,6 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-22.04
-    env:
-      DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
-      DOCKER_REPOSITORY: ${{ secrets.DOCKER_REPOSITORY }}
-      MONGO_USERNAME: ${{ secrets.MONGO_USERNAME }}
-      MONGO_PASSWORD: ${{ secrets.MONGO_PASSWORD }}
 
     steps:
       - uses: actions/checkout@v3
@@ -28,6 +23,16 @@ jobs:
           cd ./src/main/resources
           touch ./application.yml
           echo "${{ secrets.APPLICATION }}" > ./application.yml
+        shell: bash
+
+      - name: Set .env for configuration
+        run: |
+          rm ./.env
+          touch ./.env
+          echo "MONGO_USERNAME=${{ secrets.MONGO_USERNAME }}" >> ./.env
+          echo "MONGO_PASSWORD=${{ secrets.MONGO_PASSWORD }}" >> ./.env
+          echo "DOCKER_USERNAME=${{ secrets.DOCKER_USERNAME }}" >> ./.env
+          echo "DOCKER_REPOSITORY=${{ secrets.DOCKER_REPOSITORY }}" >> ./.env
         shell: bash
 
       - name: Build With Gradle
