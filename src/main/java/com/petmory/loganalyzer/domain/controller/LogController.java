@@ -1,5 +1,6 @@
 package com.petmory.loganalyzer.domain.controller;
 
+import com.petmory.loganalyzer.domain.entity.LogType;
 import com.petmory.loganalyzer.domain.service.LogService;
 import com.petmory.loganalyzer.domain.service.dto.request.SaveLogRequest;
 import com.petmory.loganalyzer.domain.service.dto.response.InfoLogResponse;
@@ -19,9 +20,14 @@ public class LogController {
         return logService.saveLog(request);
     }
 
-    @GetMapping("/all")
-    public Flux<InfoLogResponse> getLogs(){
-        return logService.getLogs();
+    @GetMapping("/{logType}")
+    public Flux<InfoLogResponse> getLogsByLogType(@PathVariable LogType logType){
+        return logService.getLogsByLogType(logType);
+    }
+
+    @GetMapping()
+    public Flux<InfoLogResponse> getLogById(@RequestParam String logId){
+        return logService.getLogById(logId);
     }
 
 }
