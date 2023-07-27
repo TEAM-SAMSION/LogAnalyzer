@@ -9,6 +9,8 @@ services:
     environment:
       MONGO_INITDB_ROOT_USERNAME: ${MONGO_USERNAME}
       MONGO_INITDB_ROOT_PASSWORD: ${MONGO_PASSWORD}
+    networks:
+      - server_network
 
   loganalyzer:
     image: ${DOCKER_USERNAME}/${DOCKER_REPOSITORY}
@@ -16,7 +18,15 @@ services:
     restart: always
     ports:
       - "8080:8080"
+      - "8079:8079"
     environment:
       - TZ=Asia/Seoul
     depends_on:
       - mongoDB
+    networks:
+      - server_network
+
+networks:
+  server_network:
+    driver: bridge
+    external: true
