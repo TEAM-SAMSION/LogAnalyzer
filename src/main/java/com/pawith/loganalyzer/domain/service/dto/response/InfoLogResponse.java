@@ -1,8 +1,8 @@
-package com.petmory.loganalyzer.domain.service.dto.response;
+package com.pawith.loganalyzer.domain.service.dto.response;
 
 
 import com.fasterxml.jackson.annotation.JsonInclude;
-import com.petmory.loganalyzer.domain.entity.LogType;
+import com.pawith.loganalyzer.domain.entity.LogType;
 import lombok.Builder;
 import lombok.Getter;
 

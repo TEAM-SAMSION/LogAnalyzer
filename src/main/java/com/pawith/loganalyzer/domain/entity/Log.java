@@ -1,4 +1,4 @@
-package com.petmory.loganalyzer.domain.entity;
+package com.pawith.loganalyzer.domain.entity;
 
 
 import lombok.AccessLevel;

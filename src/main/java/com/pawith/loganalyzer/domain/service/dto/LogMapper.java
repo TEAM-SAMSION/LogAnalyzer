@@ -1,8 +1,8 @@
-package com.petmory.loganalyzer.domain.service.dto;
+package com.pawith.loganalyzer.domain.service.dto;
 
-import com.petmory.loganalyzer.domain.entity.Log;
-import com.petmory.loganalyzer.domain.service.dto.request.SaveLogRequest;
-import com.petmory.loganalyzer.domain.service.dto.response.InfoLogResponse;
+import com.pawith.loganalyzer.domain.entity.Log;
+import com.pawith.loganalyzer.domain.service.dto.request.SaveLogRequest;
+import com.pawith.loganalyzer.domain.service.dto.response.InfoLogResponse;
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
 
