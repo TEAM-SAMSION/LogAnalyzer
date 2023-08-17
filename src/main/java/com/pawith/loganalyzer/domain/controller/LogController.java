@@ -1,9 +1,9 @@
-package com.petmory.loganalyzer.domain.controller;
+package com.pawith.loganalyzer.domain.controller;
 
-import com.petmory.loganalyzer.domain.entity.LogType;
-import com.petmory.loganalyzer.domain.service.LogService;
-import com.petmory.loganalyzer.domain.service.dto.request.SaveLogRequest;
-import com.petmory.loganalyzer.domain.service.dto.response.InfoLogResponse;
+import com.pawith.loganalyzer.domain.entity.LogType;
+import com.pawith.loganalyzer.domain.service.LogService;
+import com.pawith.loganalyzer.domain.service.dto.request.SaveLogRequest;
+import com.pawith.loganalyzer.domain.service.dto.response.InfoLogResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 import reactor.core.publisher.Flux;

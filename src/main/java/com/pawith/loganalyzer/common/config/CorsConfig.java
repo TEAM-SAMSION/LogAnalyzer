@@ -1,4 +1,4 @@
-package com.petmory.loganalyzer.common.config;
+package com.pawith.loganalyzer.common.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

@@ -1,11 +1,11 @@
-package com.petmory.loganalyzer.domain.service;
+package com.pawith.loganalyzer.domain.service;
 
-import com.petmory.loganalyzer.domain.entity.Log;
-import com.petmory.loganalyzer.domain.entity.LogRepository;
-import com.petmory.loganalyzer.domain.entity.LogType;
-import com.petmory.loganalyzer.domain.service.dto.LogMapper;
-import com.petmory.loganalyzer.domain.service.dto.request.SaveLogRequest;
-import com.petmory.loganalyzer.domain.service.dto.response.InfoLogResponse;
+import com.pawith.loganalyzer.domain.entity.Log;
+import com.pawith.loganalyzer.domain.entity.LogRepository;
+import com.pawith.loganalyzer.domain.entity.LogType;
+import com.pawith.loganalyzer.domain.service.dto.LogMapper;
+import com.pawith.loganalyzer.domain.service.dto.request.SaveLogRequest;
+import com.pawith.loganalyzer.domain.service.dto.response.InfoLogResponse;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;

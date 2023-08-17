@@ -1,4 +1,4 @@
-package com.petmory.loganalyzer.domain.service.dto.request;
+package com.pawith.loganalyzer.domain.service.dto.request;
 
 import lombok.Getter;
 
