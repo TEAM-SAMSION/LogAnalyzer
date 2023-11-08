@@ -15,6 +15,7 @@ services:
   grafana:
     image: grafana/grafana
     container_name: docker-grafana
+    user: root
     ports:
       - "3000:3000"
     depends_on:
