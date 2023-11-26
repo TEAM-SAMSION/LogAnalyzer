@@ -32,6 +32,10 @@ services:
       - "3100:3100"
     command:
       - "-config.file=/etc/loki/local-config.yaml"
+    deploy:
+      resources:
+          limits:
+            memory: 2GB
     depends_on:
       - grafana
     networks:
